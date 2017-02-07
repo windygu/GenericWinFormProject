@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B89BD41-7117-4C2D-845F-45EEB252CC35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.WinForm</RootNamespace>
+    <AssemblyName>GenericWinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Presentation\Messages\MessageToUser_Resource.fr-FR.Designer.cs">
+      <DependentUpon>MessageToUser_Resource.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Application\Presentation\Messages\MessageToUser_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageToUser_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Attributes\ReadConfiguration\ConfigProperty.cs" />
+    <Compile Include="Entities\Application\MenuItemApplication.cs" />
+    <Compile Include="Entities\Application\Resources\MenuItemApplication\MenuItemApplication.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuItemApplication.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Authentication\Resources\Role\Role.ar.Designer.cs">
+      <DependentUpon>Role.ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Authentication\Resources\Role\Role.fr.Designer.cs">
+      <DependentUpon>Role.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Authentication\Resources\Role\Role.Designer.cs">
+      <DependentUpon>Role.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Authentication\Resources\User\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Authentication\Role.cs" />
+    <Compile Include="Entities\EntityRessouceExemple.Designer.cs">
+      <DependentUpon>EntityRessouceExemple.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Persons\Resources\Person\Person.fr.Designer.cs">
+      <DependentUpon>Person.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Persons\Resources\Person\Person.ar.Designer.cs">
+      <DependentUpon>Person.ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Persons\Resources\Person\Person.Designer.cs">
+      <DependentUpon>Person.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Fields\Controls\SelectionFilter.cs" />
+    <Compile Include="Fields\ManyToManyField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\ManyToManyField.Designer.cs">
+      <DependentUpon>ManyToManyField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Exceptions\DisplayMember_NotExist_In_DisplayEntityAttribute_Exception.cs" />
+    <Compile Include="Attributes\BaseAttribute.cs" />
+    <Compile Include="Attributes\ReadConfiguration\ConfigEntity.cs" />
+    <Compile Include="Attributes\ButtonAddAttribute.cs" />
+    <Compile Include="Application\BAL\IBaseRepository.cs" />
+    <Compile Include="Components\Authentication\Authentification.cs" />
+    <Compile Include="Components\Authentication\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Authentication\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\City\City.ar.Designer.cs">
+      <DependentUpon>City.ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\City\City.fr-FR.Designer.cs">
+      <DependentUpon>City.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\City\City.Designer.cs">
+      <DependentUpon>City.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\ContactInformationsMenu.Designer.cs">
+      <DependentUpon>ContactInformationsMenu.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\ContactInformation\ContactInformation.Designer.cs">
+      <DependentUpon>ContactInformation.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\Country\Country.ar.Designer.cs">
+      <DependentUpon>Country.ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\Country\Country.fr-FR.Designer.cs">
+      <DependentUpon>Country.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\ContactInformations\Resources\Country\Country.Designer.cs">
+      <DependentUpon>Country.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Resources\Glossary\Glossary.ar.Designer.cs">
+      <DependentUpon>Glossary.ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Resources\Glossary\Glossary.fr-FR.Designer.cs">
+      <DependentUpon>Glossary.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Resources\Glossary\Glossary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Glossary.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fields\Controls\DateTimeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\Controls\DateTimeControl.Designer.cs">
+      <DependentUpon>DateTimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attributes\DisplayPropertyAttribute.cs" />
+    <Compile Include="Attributes\DisplayEntityAttribute.cs" />
+    <Compile Include="Attributes\ManagementFormAttribute.cs" />
+    <Compile Include="Attributes\ApplicationMenuAttribute.cs" />
+    <Compile Include="Attributes\SelectionCriteriaAttribute.cs" />
+    <Compile Include="Entities\Application\ApplicationName.cs" />
+    <Compile Include="Attributes\DataGridAttribute.cs" />
+    <Compile Include="Attributes\EntryFormAttribute.cs" />
+    <Compile Include="Attributes\FilterAttribute.cs" />
+    <Compile Include="Attributes\RelationshipAttribute.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\ContactInformations\ContactInformation.cs" />
+    <Compile Include="Entities\ContactInformations\Country.cs" />
+    <Compile Include="Entities\ContactInformations\City.cs" />
+    <Compile Include="Entities\IBaseEntity.cs" />
+    <Compile Include="Entities\Resources\BaseEntity\BaseEntity.en-GB.Designer.cs">
+      <DependentUpon>BaseEntity.en-GB.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Resources\BaseEntity\BaseEntity.ar.Designer.cs">
+      <DependentUpon>BaseEntity.ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Resources\BaseEntity\BaseEntity.fr-FR.Designer.cs">
+      <DependentUpon>BaseEntity.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\Resources\BaseEntity\BaseEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseEntity.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMenu\ConfigMenuApplication.cs" />
+    <Compile Include="Forms\FormMenu\IApplicationMenu.cs" />
+    <Compile Include="Forms\IBaseForm.cs" />
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ressouces\MenuForm\MenuForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuForm.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Exceptions\AffichageClasseAttributeNotExitException.cs" />
+    <Compile Include="Shared\Exceptions\AnnotationNotExistException.cs" />
+    <Compile Include="Shared\Exceptions\PropertyNotExistInEntityException.cs" />
+    <Compile Include="Fields\BaseField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\BaseField.Designer.cs">
+      <DependentUpon>BaseField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\DateTimeField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\DateTimeField.Designer.cs">
+      <DependentUpon>DateTimeField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\IBaseField.cs" />
+    <Compile Include="Fields\Controls\IInputCollectionControle.cs" />
+    <Compile Include="Fields\Controls\InputCollectionControle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\Controls\InputCollectionControle.Designer.cs">
+      <DependentUpon>InputCollectionControle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\Int32Filed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\Int32Filed.Designer.cs">
+      <DependentUpon>Int32Filed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\ManyToOneField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\ManyToOneField.Designer.cs">
+      <DependentUpon>ManyToOneField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fields\ManyToOneField.Filter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\StringField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fields\StringField.Designer.cs">
+      <DependentUpon>StringField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataGrid\EntityDataGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\DataGrid\EntityDataGridControl.Designer.cs">
+      <DependentUpon>EntityDataGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\DataGrid\IEntityDataGrideControl.cs" />
+    <Compile Include="Forms\EntityManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EntityManagementForm.Designer.cs">
+      <DependentUpon>EntityManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\EntryForms\BaseEntryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\EntryForms\BaseEntryForm.Designer.cs">
+      <DependentUpon>BaseEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\EntryForms\EntryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\EntryForms\EntryForm.Designer.cs">
+      <DependentUpon>EntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Exceptions\FieldNotExistInFormException.cs" />
+    <Compile Include="Components\EntryForms\Generate.BaseEntryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\EntryForms\IBaseEntryForm.cs" />
+    <Compile Include="Components\EntryForms\Read.BaseEntryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\EntryForms\Save.BaseEntyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\EntryForms\Write.BaseEntryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Filter\BaseFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Filter\BaseFilterControl.Designer.cs">
+      <DependentUpon>BaseFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Filter\IBaseFilterControl.cs" />
+    <Compile Include="Entities\Persons\Person.cs" />
+    <Compile Include="Entities\Authentication\User.cs" />
+    <Compile Include="Shared\Exceptions\PropertyDoesNotExistException.cs" />
+    <Compile Include="Shared\Extensions\Linq\LinqExtension.cs" />
+    <Compile Include="Components\Manager\AddForm.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\DataGrid.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\EntityManagementControl.Designer.cs">
+      <DependentUpon>EntityManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Manager\Filter.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\Init_Load.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\TabControl.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\UpdateForm.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Manager\Vide.EntityManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowEntityManagementForm.cs" />
+    <Compile Include="Components\TabPanel\BaseEntityTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\TabPanel\BaseEntityTabControl.Designer.cs">
+      <DependentUpon>BaseEntityTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Presentation\Messages\MessageToUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Fields\Validation\MessageValidation.cs" />
+    <Compile Include="Fields\Validation\ValidationManager.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Application\ApplicationInstance.cs" />
+    <Compile Include="Application\Security\Session.cs" />
+    <Compile Include="Shared\Resources\RessoucesManagerHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\Logo C+1.png" />
+    <None Include="Resources\fermer_vert1.png" />
+    <None Include="Resources\fermer_noir1.png" />
+    <None Include="Resources\fermer_bleu1.png" />
+    <None Include="Resources\edit_bleu1.png" />
+    <None Include="Resources\edit1.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\Logo C+.png" />
+    <None Include="Resources\fermer_vert.png" />
+    <None Include="Resources\fermer_noir.png" />
+    <None Include="Resources\fermer_bleu.png" />
+    <None Include="Resources\edit_bleu.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\delete.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Application\Presentation\Messages\MessageToUser_Resource.ar.resx" />
+    <EmbeddedResource Include="Application\Presentation\Messages\MessageToUser_Resource.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageToUser_Resource.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Presentation\Messages\MessageToUser_Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageToUser_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Authentication\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Application\Resources\MenuItemApplication\MenuItemApplication.ar.resx" />
+    <EmbeddedResource Include="Entities\Application\Resources\MenuItemApplication\MenuItemApplication.fr.resx" />
+    <EmbeddedResource Include="Entities\Application\Resources\MenuItemApplication\MenuItemApplication.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MenuItemApplication.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Authentication\Resources\Role\Role.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Role.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Authentication\Resources\Role\Role.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Role.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Authentication\Resources\Role\Role.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Role.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Authentication\Resources\User\User.ar.resx" />
+    <EmbeddedResource Include="Entities\Authentication\Resources\User\User.fr.resx" />
+    <EmbeddedResource Include="Entities\Authentication\Resources\User\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\City\City.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>City.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\City\City.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>City.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\City\City.fr.resx" />
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\City\City.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>City.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\ContactInformationsMenu.ar.resx" />
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\ContactInformationsMenu.fr.resx" />
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\ContactInformationsMenu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactInformationsMenu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\ContactInformation\ContactInformation.ar.resx" />
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\ContactInformation\ContactInformation.fr.resx" />
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\ContactInformation\ContactInformation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactInformation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\Country\Country.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Country.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\Country\Country.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Country.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\Country\Country.fr.resx" />
+    <EmbeddedResource Include="Entities\ContactInformations\Resources\Country\Country.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Country.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\EntityRessouceExemple.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EntityRessouceExemple.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\BaseEntity\BaseEntity.fr.resx" />
+    <EmbeddedResource Include="Entities\Resources\Glossary\Glossary.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Glossary.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\Glossary\Glossary.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Glossary.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\Glossary\Glossary.fr.resx" />
+    <EmbeddedResource Include="Entities\Resources\Glossary\Glossary.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Glossary.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Persons\Resources\Person\Person.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Person.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Persons\Resources\Person\Person.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Person.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Persons\Resources\Person\Person.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Person.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\Controls\DateTimeControl.resx">
+      <DependentUpon>DateTimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\BaseField.resx">
+      <DependentUpon>BaseField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\DateTimeField.resx">
+      <DependentUpon>DateTimeField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\Controls\InputCollectionControle.resx">
+      <DependentUpon>InputCollectionControle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\Int32Filed.resx">
+      <DependentUpon>Int32Filed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\ManyToManyField.resx">
+      <DependentUpon>ManyToManyField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\ManyToOneField.resx">
+      <DependentUpon>ManyToOneField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\StringField.resx">
+      <DependentUpon>StringField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\DataGrid\EntityDataGridControl.resx">
+      <DependentUpon>EntityDataGridControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EntityManagementForm.resx">
+      <DependentUpon>EntityManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\EntryForms\BaseEntryForm.resx">
+      <DependentUpon>BaseEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\EntryForms\EntryForm.resx">
+      <DependentUpon>EntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Filter\BaseFilterControl.resx">
+      <DependentUpon>BaseFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Manager\EntityManagementControl.resx">
+      <DependentUpon>EntityManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\TabPanel\BaseEntityTabControl.resx">
+      <DependentUpon>BaseEntityTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ressouces\MenuForm\MenuForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MenuForm.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\BaseEntity\BaseEntity.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseEntity.en-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\BaseEntity\BaseEntity.ar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseEntity.ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\BaseEntity\BaseEntity.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseEntity.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\BaseEntity\BaseEntity.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BaseEntity.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
