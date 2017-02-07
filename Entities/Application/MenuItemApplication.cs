@@ -14,7 +14,7 @@ namespace App.WinForm.Entities.Application
     public class MenuItemApplication : BaseEntity
     {
         [DisplayProperty(isInGlossary =true)]
-        [EntryForm(Ordre = 1)]
+        [EntryForm(Ordre = 2)]
         [Filter]
         [DataGrid]
         public string Name { set; get; }
