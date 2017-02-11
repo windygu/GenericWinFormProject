@@ -170,8 +170,6 @@ namespace App.WinForm
         public void Actualiser()
         {
             this.DataGridControl.Actualiser(this.FilterControl.CritereRechercheFiltre());
-            this.RenomerTitrePage(this.FilterControl.CritereRechercheFiltre());
-
         }
         #endregion
 

@@ -114,7 +114,7 @@ namespace App.WinForm.EntityManagement
         {
             // Postion et Taille par défaut
             int width_label = 100;
-            int height_label = 20;
+            int height_label = 25;
             int width_control = 100;
             int height_control = 20;
             int TabIndex = 0;
@@ -198,7 +198,7 @@ namespace App.WinForm.EntityManagement
                         );
                     manyToOneField.Name = propertyInfo.Name;
                     manyToOneField.TabIndex = TabIndex++;
-                    manyToOneField.Text_Label = attributesOfProperty.DisplayProperty.Titre;
+                    manyToOneField.Text_Label =  attributesOfProperty.DisplayProperty.Titre;
                     manyToOneField.FieldChanged += Filtre_ComboBox_SelectedValueChanged;
                     MainContainer.Controls.Add(manyToOneField);
 

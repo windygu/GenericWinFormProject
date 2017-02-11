@@ -81,22 +81,10 @@ namespace App.WinForm
             this.Name = "Interface_Gestion_" + this.Service.TypeEntity.ToString();
             this.Text = this.ConfigEntity.ManagementForm.FormTitle;
             this.tabPageAdd.ToolTipText = this.ConfigEntity.AddButton.Title;
-            lbl_titre_gestion.Text = this.ConfigEntity.ManagementForm.FormTitle;
+            
             this.tabControl_MainManager.TabPages["TabGrid"].Text = this.ConfigEntity.ManagementForm.TitrePageGridView;
 
             
-        }
-        protected void RenomerTitrePage(Dictionary<string, object> critereRechercheFiltre)
-        {
-            // Renommer le Titre de la page
-            lbl_titre_gestion.Text = this.Text;
-            if (critereRechercheFiltre != null && critereRechercheFiltre.Count() > 0)
-            {
-                lbl_titre_gestion.Text += " par ( ";
-                lbl_titre_gestion.Text += string.Join(",", critereRechercheFiltre.Select(d => d.Key));
-                lbl_titre_gestion.Text += " )";
-            }
-
         }
         #endregion
     }

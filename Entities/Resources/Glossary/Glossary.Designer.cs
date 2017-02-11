@@ -61,6 +61,15 @@ namespace App.WinForm.Entities.Resources.Glossary {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Code.
+        /// </summary>
+        internal static string Code {
+            get {
+                return ResourceManager.GetString("Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Country.
         /// </summary>
         internal static string Country {
@@ -97,6 +106,15 @@ namespace App.WinForm.Entities.Resources.Glossary {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à End Date.
+        /// </summary>
+        internal static string EndDate {
+            get {
+                return ResourceManager.GetString("EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Name.
         /// </summary>
         internal static string Name {
@@ -129,6 +147,24 @@ namespace App.WinForm.Entities.Resources.Glossary {
         internal static string Roles {
             get {
                 return ResourceManager.GetString("Roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Start Date.
+        /// </summary>
+        internal static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Title.
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

@@ -151,29 +151,28 @@ namespace App.WinFrom.Fields
             // Label
             labelField.Size = this.SizeLabel;
             labelField.AutoSize = false;
+            // Containner
+            this.splitContainer.Orientation = this.OrientationFiled;
             this.splitContainer.IsSplitterFixed = true;
             this.splitContainer.TabStop = false;
 
-            // Containner
-            this.splitContainer.Orientation = this.OrientationFiled;
-
-
             if (OrientationFiled == Orientation.Vertical)
             {
-
+                // Field
                 int width_field = this.SizeLabel.Width + this.SizeControl.Width;
                 int height_field = this.SizeControl.Height;
-
                 this.Size = new Size(width_field, height_field);
+                // Containner
                 this.splitContainer.Size = new Size(width_field, height_field);
                 this.splitContainer.SplitterDistance = this.SizeLabel.Width;
             }
             else
             {
+                // Field
                 int width_field = this.SizeControl.Width;
                 int height_field = this.SizeLabel.Height + this.SizeControl.Height;
-
                 this.Size = new Size(width_field, height_field);
+                // Containner
                 this.splitContainer.Size = new Size(width_field, height_field);
                 this.splitContainer.SplitterDistance = this.SizeLabel.Height;
             }

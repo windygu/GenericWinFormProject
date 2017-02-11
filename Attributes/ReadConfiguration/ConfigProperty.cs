@@ -1,6 +1,7 @@
 ﻿using App.WinForm;
 using App.WinForm.Application.Presentation.Messages;
 using App.WinForm.Attributes;
+using App.WinForm.Entities;
 using App.WinForm.Entities.Resources.Glossary;
 using App.WinForm.Security;
 using App.WinForm.Shared.Resources;
@@ -60,14 +61,20 @@ namespace App.Shared.AttributesManager
             this.TypeOfEntity = propertyInfo.ReflectedType;
             this.Localizable = this.ConfigEntity.DisplayEntity.Localizable;
 
-            
-           
+            //
+            // Relationship
+            //
+            Attribute Relationship = propertyInfo.GetCustomAttribute(typeof(RelationshipAttribute));
+            this.Relationship = Relationship as RelationshipAttribute;
+
             //
             // DisplayProperty
             //
             #region DisplayProperty
+            // Load DisplayProperty
             Attribute DisplayProperty = propertyInfo.GetCustomAttribute(typeof(DisplayPropertyAttribute));
             this.DisplayProperty = DisplayProperty as DisplayPropertyAttribute;
+            // If DisplayProperty not exist
             if (this.DisplayProperty == null)
             {
                 if (this.Localizable == false)
@@ -87,7 +94,17 @@ namespace App.Shared.AttributesManager
             }
             else
             {
-                this.DisplayProperty.Titre = GetStringFromRessource(propertyInfo.Name);
+                //
+                // Title
+                //
+                if (this.DisplayProperty.Titre == null)
+                {
+                    
+                    if ( this.PropertyInfo.PropertyType.IsSubclassOf(typeof(BaseEntity)))
+                        this.DisplayProperty.Titre = new ConfigEntity(this.PropertyInfo.PropertyType).DisplayEntity.SingularName;
+                }
+                else
+                    this.DisplayProperty.Titre = GetStringFromRessource(propertyInfo.Name);
             }
             #endregion
 
@@ -113,23 +130,19 @@ namespace App.Shared.AttributesManager
             Attribute Filter = propertyInfo.GetCustomAttribute(typeof(FilterAttribute));
             this.Filter = Filter as FilterAttribute;
 
-            //
-            // Relationship
-            //
-            Attribute Relationship = propertyInfo.GetCustomAttribute(typeof(RelationshipAttribute));
-            this.Relationship = Relationship as RelationshipAttribute;
+
         }
 
-       
+
 
         private string GetStringFromRessource(string key, bool return_null_if_nat_exist = false)
         {
             string msg = null;
             foreach (var item in RessoucesManagers.Values)
             {
-              string text;
-              text = item.GetString(key, this.CultureInfo);
-              if(text != null)
+                string text;
+                text = item.GetString(key, this.CultureInfo);
+                if (text != null)
                 {
                     msg = text;
                     break;

@@ -23,6 +23,7 @@ namespace App.WinFrom.Fields.Controls
         public event EventHandler ValueChanged;
         protected void onValueChanged(object sender, EventArgs e)
         {
+            if(ValueChanged != null)
             ValueChanged(sender, e);
         }
 
@@ -51,6 +52,7 @@ namespace App.WinFrom.Fields.Controls
         /// dddd/MMMM/yyyy h:m:s
         /// </summary>
         String Formet { get; set; }
+        public bool Show_Config { get; private set; }
 
 
         #region Constructeurs
@@ -60,15 +62,18 @@ namespace App.WinFrom.Fields.Controls
             InitializeComponent();
             if (ListCultureInfo != null)
             {
+                this.Show_Config = true;
                 this.ListCultureInfo = ListCultureInfo;
             }
             else
             {
+                this.Show_Config = false;
                 this.AutoSize = true;
                 this.Controls.Clear();
                 
                 dateTimePicker.Dock = DockStyle.Fill;
                 this.Controls.Add(dateTimePicker);
+                this.Size = dateTimePicker.Size;
             }
         }
         public DateTimeControl() : this(null) { }
@@ -76,6 +81,14 @@ namespace App.WinFrom.Fields.Controls
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             onValueChanged(sender, e);
+        }
+
+        private void DateTimeControl_Resize(object sender, EventArgs e)
+        {
+            if(this.Show_Config)
+            this.Size = new Size(this.Width, 40);
+            else
+                this.Size = new Size(this.Width, 20);
         }
     }
 }

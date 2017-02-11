@@ -38,8 +38,6 @@
             this.tabPageAdd = new System.Windows.Forms.TabPage();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainerFilter = new System.Windows.Forms.SplitContainer();
-            this.lbl_titre_gestion = new System.Windows.Forms.Label();
             this.panel_Filtre = new System.Windows.Forms.Panel();
             this.panelDataGrid.SuspendLayout();
             this.tabControlManagers.SuspendLayout();
@@ -48,10 +46,6 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerFilter)).BeginInit();
-            this.splitContainerFilter.Panel1.SuspendLayout();
-            this.splitContainerFilter.Panel2.SuspendLayout();
-            this.splitContainerFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDataGrid
@@ -148,7 +142,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainerFilter);
+            this.splitContainer1.Panel1.Controls.Add(this.panel_Filtre);
             this.splitContainer1.Panel1MinSize = 100;
             // 
             // splitContainer1.Panel2
@@ -159,46 +153,15 @@
             this.splitContainer1.SplitterDistance = 100;
             this.splitContainer1.TabIndex = 15;
             // 
-            // splitContainerFilter
-            // 
-            this.splitContainerFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainerFilter.IsSplitterFixed = true;
-            this.splitContainerFilter.Location = new System.Drawing.Point(12, 3);
-            this.splitContainerFilter.Name = "splitContainerFilter";
-            this.splitContainerFilter.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainerFilter.Panel1
-            // 
-            this.splitContainerFilter.Panel1.Controls.Add(this.lbl_titre_gestion);
-            // 
-            // splitContainerFilter.Panel2
-            // 
-            this.splitContainerFilter.Panel2.Controls.Add(this.panel_Filtre);
-            this.splitContainerFilter.Size = new System.Drawing.Size(1065, 94);
-            this.splitContainerFilter.SplitterDistance = 25;
-            this.splitContainerFilter.TabIndex = 15;
-            this.splitContainerFilter.TabStop = false;
-            // 
-            // lbl_titre_gestion
-            // 
-            this.lbl_titre_gestion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_titre_gestion.AutoSize = true;
-            this.lbl_titre_gestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titre_gestion.Location = new System.Drawing.Point(3, 5);
-            this.lbl_titre_gestion.Name = "lbl_titre_gestion";
-            this.lbl_titre_gestion.Size = new System.Drawing.Size(77, 20);
-            this.lbl_titre_gestion.TabIndex = 14;
-            this.lbl_titre_gestion.Text = "Gestion ";
-            // 
             // panel_Filtre
             // 
+            this.panel_Filtre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Filtre.AutoSize = true;
-            this.panel_Filtre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Filtre.Location = new System.Drawing.Point(0, 0);
+            this.panel_Filtre.Location = new System.Drawing.Point(12, 3);
             this.panel_Filtre.Name = "panel_Filtre";
-            this.panel_Filtre.Size = new System.Drawing.Size(1065, 65);
+            this.panel_Filtre.Size = new System.Drawing.Size(1065, 94);
             this.panel_Filtre.TabIndex = 16;
             this.panel_Filtre.Tag = "";
             // 
@@ -214,15 +177,10 @@
             this.tabControlManagers.ResumeLayout(false);
             this.tabControl_MainManager.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainerFilter.Panel1.ResumeLayout(false);
-            this.splitContainerFilter.Panel1.PerformLayout();
-            this.splitContainerFilter.Panel2.ResumeLayout(false);
-            this.splitContainerFilter.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerFilter)).EndInit();
-            this.splitContainerFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -231,7 +189,6 @@
 
         private System.Windows.Forms.Panel panelDataGrid;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label lbl_titre_gestion;
         private System.Windows.Forms.Panel panel_Filtre;
         private System.Windows.Forms.TabControl tabControl_MainManager;
         private System.Windows.Forms.TabPage TabGrid;
@@ -239,6 +196,5 @@
         private System.Windows.Forms.TabPage main;
         private System.Windows.Forms.TabPage tabPageAdd;
         private System.Windows.Forms.ImageList imageList;
-        private System.Windows.Forms.SplitContainer splitContainerFilter;
     }
 }

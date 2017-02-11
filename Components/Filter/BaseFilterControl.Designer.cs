@@ -44,7 +44,6 @@
             this.groupBoxFiltrage.Size = new System.Drawing.Size(512, 194);
             this.groupBoxFiltrage.TabIndex = 14;
             this.groupBoxFiltrage.TabStop = false;
-            this.groupBoxFiltrage.Text = "Filtre";
             this.groupBoxFiltrage.Enter += new System.EventHandler(this.groupBoxFiltrage_Enter);
             // 
             // flowLayoutPanel1

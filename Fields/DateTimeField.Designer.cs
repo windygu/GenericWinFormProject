@@ -40,23 +40,29 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.dateTimeControl);
-            this.splitContainer.Size = new System.Drawing.Size(234, 78);
+            this.splitContainer.Size = new System.Drawing.Size(328, 123);
+            this.splitContainer.SplitterDistance = 55;
             // 
             // dateTimeControl
             // 
+            this.dateTimeControl.AutoSize = true;
+            this.dateTimeControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.dateTimeControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimeControl.Location = new System.Drawing.Point(0, 0);
             this.dateTimeControl.Name = "dateTimeControl";
-            this.dateTimeControl.Size = new System.Drawing.Size(234, 49);
+            this.dateTimeControl.Size = new System.Drawing.Size(328, 20);
             this.dateTimeControl.TabIndex = 0;
+            this.dateTimeControl.Value = new System.DateTime(2017, 2, 7, 16, 48, 33, 903);
             this.dateTimeControl.ValueChanged += new System.EventHandler(this.dateTimeControl_ValueChanged);
             // 
             // DateTimeField
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoSize = true;
             this.Name = "DateTimeField";
-            this.Size = new System.Drawing.Size(234, 78);
+            this.Size = new System.Drawing.Size(328, 123);
             this.splitContainer.Panel2.ResumeLayout(false);
+            this.splitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);

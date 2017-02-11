@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace App.WinForm.Shared.Resources
@@ -23,16 +24,13 @@ namespace App.WinForm.Shared.Resources
            
             if (resourceNames.Count == 0)
             {
-                foreach (Assembly item in AppDomain.CurrentDomain.GetAssemblies())
+
+                Assembly.GetExecutingAssembly();
+                foreach (Assembly item in 
+                    AppDomain.CurrentDomain.GetAssemblies()
+                    .Where(a=>(a.FullName.Contains("Entities") || a.FullName.Contains(this.GetType().Assembly.FullName))))
                 {
-                    try
-                    {
-                        resourceNames.AddRange(item.GetManifestResourceNames());
-                    }
-                    catch (NotSupportedException)
-                    {
-                        // il y a quelques assemblie qui ne veut pas charger : .GetManifestResourceNames()
-                    }
+                    resourceNames.AddRange(item.GetManifestResourceNames());
                 }
             }
             return resourceNames.Contains(resourceName + ".resources");

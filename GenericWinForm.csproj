@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\BAL\GenericWinAppBaseRepository.cs" />
     <Compile Include="Application\Presentation\Messages\MessageToUser_Resource.fr-FR.Designer.cs">
       <DependentUpon>MessageToUser_Resource.fr-FR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -66,6 +67,7 @@
       <DependentUpon>MessageToUser_Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Attributes\ReadConfiguration\ConfigProperty.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="Entities\Application\MenuItemApplication.cs" />
     <Compile Include="Entities\Application\Resources\MenuItemApplication\MenuItemApplication.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +116,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Fields\Controls\SelectionFilter.cs" />
+    <Compile Include="Fields\TestFields\FormTestDateTimeField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fields\TestFields\FormTestDateTimeField.Designer.cs">
+      <DependentUpon>FormTestDateTimeField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fields\ManyToManyField.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -391,6 +399,7 @@
     <Compile Include="Application\ApplicationInstance.cs" />
     <Compile Include="Application\Security\Session.cs" />
     <Compile Include="Shared\Resources\RessoucesManagerHelper.cs" />
+    <Compile Include="TestModelContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save1.png" />
@@ -534,6 +543,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fields\Controls\InputCollectionControle.resx">
       <DependentUpon>InputCollectionControle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fields\TestFields\FormTestDateTimeField.resx">
+      <DependentUpon>FormTestDateTimeField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fields\Int32Filed.resx">
       <DependentUpon>Int32Filed.cs</DependentUpon>
