@@ -55,8 +55,10 @@
             this.labelField.AutoSize = true;
             this.labelField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelField.Location = new System.Drawing.Point(0, 0);
+            this.labelField.Margin = new System.Windows.Forms.Padding(0);
+            this.labelField.MinimumSize = new System.Drawing.Size(50, 20);
             this.labelField.Name = "labelField";
-            this.labelField.Size = new System.Drawing.Size(59, 13);
+            this.labelField.Size = new System.Drawing.Size(59, 20);
             this.labelField.TabIndex = 0;
             this.labelField.Text = "Information";
             // 

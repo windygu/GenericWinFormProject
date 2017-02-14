@@ -146,6 +146,7 @@ namespace App.WinForm
                          new Size(width_label, height_label),
                          new Size(width_control_config, height_control),
                          this.ConfigEntity);
+                         
                         dateTimeField.Location = new System.Drawing.Point(x_field, y_field);
                         dateTimeField.Name = item.Name;
                         dateTimeField.TabIndex = ++TabIndex;

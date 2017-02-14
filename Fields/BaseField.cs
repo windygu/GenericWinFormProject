@@ -148,13 +148,12 @@ namespace App.WinFrom.Fields
         /// </summary>
         protected void InitSizeField()
         {
-            // Label
-            labelField.Size = this.SizeLabel;
-            labelField.AutoSize = false;
             // Containner
             this.splitContainer.Orientation = this.OrientationFiled;
             this.splitContainer.IsSplitterFixed = true;
             this.splitContainer.TabStop = false;
+
+            // Label Dock is Fill
 
             if (OrientationFiled == Orientation.Vertical)
             {

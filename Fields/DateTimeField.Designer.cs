@@ -58,7 +58,7 @@
             // DateTimeField
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Name = "DateTimeField";
             this.Size = new System.Drawing.Size(328, 123);
             this.splitContainer.Panel2.ResumeLayout(false);

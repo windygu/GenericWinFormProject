@@ -52,7 +52,10 @@ namespace App.WinFrom.Fields.Controls
         /// dddd/MMMM/yyyy h:m:s
         /// </summary>
         String Formet { get; set; }
-        public bool Show_Config { get; private set; }
+        /// <summary>
+        /// Indicate if the configuration of DateTime Cilture is true or false
+        /// </summary>
+        public bool Show_Config_Culture { get; private set; }
 
 
         #region Constructeurs
@@ -62,12 +65,12 @@ namespace App.WinFrom.Fields.Controls
             InitializeComponent();
             if (ListCultureInfo != null)
             {
-                this.Show_Config = true;
+                this.Show_Config_Culture = true;
                 this.ListCultureInfo = ListCultureInfo;
             }
             else
             {
-                this.Show_Config = false;
+                this.Show_Config_Culture = false;
                 this.AutoSize = true;
                 this.Controls.Clear();
                 
@@ -85,10 +88,15 @@ namespace App.WinFrom.Fields.Controls
 
         private void DateTimeControl_Resize(object sender, EventArgs e)
         {
-            if(this.Show_Config)
-            this.Size = new Size(this.Width, 40);
+           
+        }
+
+        public void ChangeSize(Size size)
+        {
+            if (this.Show_Config_Culture)
+                this.Size = new Size(size.Width, size.Height + 20);
             else
-                this.Size = new Size(this.Width, 20);
+                this.Size = size;
         }
     }
 }
