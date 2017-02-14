@@ -215,6 +215,7 @@ namespace App.WinForm.Fields
             /// si cette propiété n'existe pas la méthode lance une exception
             if (comboBoxChanged.SelectedValue != null && (ListeComboBox.Values.Count() - 1) >= (indexComboBoxChanged + 1))
             {
+
                 // [Update] chargement des données par des requête Linq au lieux d'utiliser 
                 // les membres Virtuel
 

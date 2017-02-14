@@ -19,6 +19,10 @@ namespace App.WinForm.Fields.Controls
     {
         #region Params
         private Orientation OrientationFiled;
+        /// <summary>
+        /// Indicate if the selection filter has somme CombBox filter
+        /// </summary>
+        public bool isHasFilter;
 
         public Size SizeLabel { get; private set; }
         public Size SizeControl { get; private set; }
@@ -159,6 +163,14 @@ namespace App.WinForm.Fields.Controls
             SelectionCriteriaAttribute MetaSelectionCriteria =
               (SelectionCriteriaAttribute)selectionCriteriaAttribute;
 
+            if(MetaSelectionCriteria == null)
+            {
+                this.isHasFilter = false;
+            }else
+            {
+                this.isHasFilter = true;
+            }
+
        
             int index = 10;
 
@@ -225,6 +237,7 @@ namespace App.WinForm.Fields.Controls
                     ListeValeursInitiaux.Add(ListeComboBox.Keys.ElementAt(i), 0);
                 }
             // Init la de la vlaeur de comboBox Actuel
+            if(ListeValeursInitiaux.Count > 0)
             ListeValeursInitiaux[ListeValeursInitiaux.Last().Key] = Value;
 
             IBaseRepository curentService = this.Service

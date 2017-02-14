@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace App.WinForm
 {
@@ -133,7 +134,8 @@ namespace App.WinForm
                         }
                         if (attributesOfProperty.Relationship?.Relation == RelationshipAttribute.Relations.ManyToMany)
                         {
-                            List<Object> ls_object = typeEntity.GetProperty(NomPropriete).GetValue(entity) as List<object>;
+                            IList v  = typeEntity.GetProperty(NomPropriete).GetValue(entity) as IList;
+                            List<object> ls_object = v.Cast<Object>().ToList();
                             if (ls_object == null) continue;
                             List<BaseEntity> ls_valeur = ls_object.Cast<BaseEntity>().ToList();
                             if (ls_valeur == null) continue;

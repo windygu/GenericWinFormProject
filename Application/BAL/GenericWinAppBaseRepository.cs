@@ -51,7 +51,10 @@ namespace App.WinForm.Application.BAL
 
         #region Context
 
-        public virtual DbContext context { get; set; }
+        public virtual DbContext context {
+            get;
+            set;
+        }
 
         public virtual DbContext Context()
         {
@@ -181,6 +184,7 @@ namespace App.WinForm.Application.BAL
             // Règle de gestion : La date de création égale la date de système lors de l'enregistrement
             item.DateCreation = DateTime.Now;
             this.DbSet.Add(item);
+            string  state = this.context.Entry(item).State.ToString();
             return this.context.SaveChanges();
         }
 
