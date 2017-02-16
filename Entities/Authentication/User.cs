@@ -1,5 +1,6 @@
 ﻿using App.WinForm.Attributes;
 using App.WinForm.Entities.Persons;
+using App.WinForm.Entities.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -44,8 +45,8 @@ namespace App.WinForm.Entities.Authentication
         public string Password { set; get; }
 
 
-        public string Role { set; get; }
-        
+        public List<Role> Roles { set; get; }
 
+        
     }
 }

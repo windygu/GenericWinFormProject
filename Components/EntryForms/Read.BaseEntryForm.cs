@@ -19,7 +19,7 @@ namespace App.WinForm
         /// <summary>
         /// Lire les informations du formulaire vers l'Entity
         /// </summary>
-        protected virtual void ReadFormToEntity()
+        public virtual void ReadFormToEntity()
         {
             BaseEntity entity = this.Entity;
             Type typeEntity = this.Service.TypeEntity;

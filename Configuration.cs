@@ -5,6 +5,7 @@ namespace App.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using WinForm.Entities.Authentication;
+    using WinForm.Entities.Security;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TestModelContext>
     {

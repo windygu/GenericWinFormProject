@@ -1,11 +1,12 @@
 ﻿using App.WinForm.Attributes;
+using App.WinForm.Entities.Application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.WinForm.Entities.Authentication
+namespace App.WinForm.Entities.Security
 {
     [DisplayEntity(DisplayMember = "Name")]
     [Menu(Group = "configurationToolStripMenuItem")]
@@ -27,5 +28,10 @@ namespace App.WinForm.Entities.Authentication
         /// indicate that the role is hidden
         /// </summary>
         public bool Hidden { set; get; }
+
+        public virtual List<Authorization> Authorizations { set; get; }
+
+        public  List<MenuItemApplication> MenuItemApplications { set; get; }
+
     }
 }

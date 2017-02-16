@@ -10,6 +10,7 @@
     using WinForm.Entities.Application;
     using WinForm.Entities.Authentication;
     using WinForm.Entities.ContactInformations;
+    using WinForm.Entities.Security;
 
     public class TestModelContext : DbContext
     {

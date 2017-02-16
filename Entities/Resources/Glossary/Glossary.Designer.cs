@@ -160,11 +160,29 @@ namespace App.WinForm.Entities.Resources.Glossary {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Title.
+        ///   Recherche une chaîne localisée semblable à Arabic Title.
         /// </summary>
-        internal static string Title {
+        internal static string TitleArabic {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("TitleArabic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à English Title.
+        /// </summary>
+        internal static string TitleEnglish {
+            get {
+                return ResourceManager.GetString("TitleEnglish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à French Title.
+        /// </summary>
+        internal static string TitleFrench {
+            get {
+                return ResourceManager.GetString("TitleFrench", resourceCulture);
             }
         }
     }

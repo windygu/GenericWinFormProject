@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\BAL\GenericWinAppBaseRepository.cs" />
+    <Compile Include="Application\BAL\InstallApplication.cs" />
     <Compile Include="Application\Presentation\Messages\MessageToUser_Resource.fr-FR.Designer.cs">
       <DependentUpon>MessageToUser_Resource.fr-FR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -74,17 +75,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MenuItemApplication.resx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Authentication\Resources\Role\Role.ar.Designer.cs">
+    <Compile Include="Entities\Security\Resources\Role\Role.ar.Designer.cs">
       <DependentUpon>Role.ar.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Entities\Authentication\Resources\Role\Role.fr.Designer.cs">
+    <Compile Include="Entities\Security\Resources\Role\Role.fr.Designer.cs">
       <DependentUpon>Role.fr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Entities\Authentication\Resources\Role\Role.Designer.cs">
+    <Compile Include="Entities\Security\Resources\Role\Role.Designer.cs">
       <DependentUpon>Role.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,7 +95,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>User.resx</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Authentication\Role.cs" />
     <Compile Include="Entities\EntityRessouceExemple.Designer.cs">
       <DependentUpon>EntityRessouceExemple.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -115,6 +115,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Entities\Security\Action.cs" />
+    <Compile Include="Entities\Security\Authorization.cs" />
+    <Compile Include="Entities\Security\Role.cs" />
     <Compile Include="Fields\Controls\SelectionFilter.cs" />
     <Compile Include="Fields\TestFields\FormTestDateTimeField.cs">
       <SubType>Form</SubType>
@@ -128,6 +131,7 @@
     <Compile Include="Fields\ManyToManyField.Designer.cs">
       <DependentUpon>ManyToManyField.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelData\EntitiesModel.cs" />
     <Compile Include="Shared\Exceptions\DisplayMember_NotExist_In_DisplayEntityAttribute_Exception.cs" />
     <Compile Include="Attributes\BaseAttribute.cs" />
     <Compile Include="Attributes\ReadConfiguration\ConfigEntity.cs" />
@@ -402,6 +406,8 @@
     <Compile Include="TestModelContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Entities\ClassDiagramGenericWinForm.cd" />
+    <None Include="Entities\Security\ClassDiagramSecurity.cd" />
     <None Include="Resources\save1.png" />
     <None Include="Resources\Logo C+1.png" />
     <None Include="Resources\fermer_vert1.png" />
@@ -446,15 +452,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MenuItemApplication.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entities\Authentication\Resources\Role\Role.ar.resx">
+    <EmbeddedResource Include="Entities\Security\Resources\Role\Role.ar.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Role.ar.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entities\Authentication\Resources\Role\Role.fr.resx">
+    <EmbeddedResource Include="Entities\Security\Resources\Role\Role.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Role.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entities\Authentication\Resources\Role\Role.resx">
+    <EmbeddedResource Include="Entities\Security\Resources\Role\Role.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Role.Designer.cs</LastGenOutput>
     </EmbeddedResource>

@@ -53,6 +53,8 @@ namespace App.WinForm.Application.Security
             this.ApplicationMenu = ApplicationMenu;
             this.user = user;
             this.CultureInfo = CultureInfo;
+
+          
         }
 
         #endregion

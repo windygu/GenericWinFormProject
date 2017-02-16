@@ -134,9 +134,10 @@ namespace App.WinForm
                         }
                         if (attributesOfProperty.Relationship?.Relation == RelationshipAttribute.Relations.ManyToMany)
                         {
-                            IList v  = typeEntity.GetProperty(NomPropriete).GetValue(entity) as IList;
-                            List<object> ls_object = v.Cast<Object>().ToList();
-                            if (ls_object == null) continue;
+                            IList v_ls_object = typeEntity.GetProperty(NomPropriete).GetValue(entity) as IList;
+                            if (v_ls_object == null) continue;
+                            List<object> ls_object = v_ls_object.Cast<Object>().ToList();
+                           
                             List<BaseEntity> ls_valeur = ls_object.Cast<BaseEntity>().ToList();
                             if (ls_valeur == null) continue;
                             

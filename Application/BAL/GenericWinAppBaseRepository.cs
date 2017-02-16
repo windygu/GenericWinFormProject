@@ -73,7 +73,7 @@ namespace App.WinForm.Application.BAL
         #region construcreur
         public GenericWinAppBaseRepository(DbContext context)
         {
-            this.context = (TestModelContext)context;
+            this.context = context;
             if (this.context == null) this.context = new TestModelContext();
 
             this.DbSet = this.context.Set<T>();
